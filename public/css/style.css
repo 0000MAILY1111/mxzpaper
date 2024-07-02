@@ -450,7 +450,7 @@ button {
     height: auto;
     line-height: normal;
     padding: 10px 20px;
-     -webkit-appearance: none !important;
+    -webkit-appearance: none !important;
 }
 
 

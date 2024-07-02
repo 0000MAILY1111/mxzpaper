@@ -52,6 +52,8 @@
                             <x-nav-link href="{{ route('productos.lista') }}" :active="request()->routeIs('habitaciones.lista')">
                                 {{ __('Lista de Productos') }}
                             </x-nav-link>
+
+                            
                         </x-slot>
                     </x-dropdown>
                     @endrole

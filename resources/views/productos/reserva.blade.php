@@ -19,7 +19,7 @@
     <!-- Contenido de tu página -->
 
     <div class="bg-orange-100 p-8 rounded shadow">
-        <h2 class="text-2xl font-bold mb-4">Detalles del Producto</h2>
+        <h2 class="text-2xl font-bold mb-4">Detalles de la Reserva</h2>
 
         <form method="POST" action="/guardar-datos">
             @csrf

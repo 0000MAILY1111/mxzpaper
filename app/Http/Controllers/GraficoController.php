@@ -13,6 +13,7 @@ class GraficoController extends Controller
     {
         $users = User::all();
         $productos = Product::all();
+        
 
         $puntos = [];
         foreach ($productos as $producto){

@@ -91,7 +91,7 @@ class ReservaController extends Controller
         $pay-> description = $carnet;
         $pay->total = $nombre;
         $pay->iduser = auth()->user()->id; // Obtener el ID del usuario logueado
-        // $reserva->estado = "Procesando";
+       // $reserva->estado = "Procesando";
         // Guardar la reserva
         $pay->save();
 
