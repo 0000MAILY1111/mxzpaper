@@ -31,22 +31,37 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 
 
+      
+      
 
-  <!-- Styles -->
-    @livewireStyles
-    @stack('styles')
+
+  
+    
    </head>
    <!-- body -->
    <body class="main-layout">
+
+ 
 
       <!-- header -->
       <header>
          @if(session('success'))
          <div class="bg-green-200 text-green-800 p-4 mt-4 rounded">
+        
             {{ session('success') }}
          </div>
+         <div class="content-area">
+    <!-- Contenido que cambiará entre modos claro y oscuro -->
+        </div>
+        
+
          @endif
          <!-- header inner -->
+
+
+
+
+
          <div class="header">
             <div class="container">
                <div class="row">
@@ -59,6 +74,55 @@
                         </div>
                      </div>
                   </div>
+
+
+<!-- Añadir esto en tu archivo blade donde quieres los botones -->
+<div class="mode-switch" >
+    <button id="light-mode">Modo Claro</button>
+    <button id="dark-mode">Modo Oscuro</button>
+</div>
+
+<style>
+/* Estilos para modo claro */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Estilos para modo oscuro */
+.dark-mode  {
+    background-color: black;
+    color: white;
+}
+
+
+/* Estilos para el modo oscuro */
+.dark-mode .bg-white {
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto claro */
+}
+
+</style>
+
+<script>
+// Función para cambiar a modo claro
+function setLightMode() {
+    document.body.classList.add('light-mode');
+    document.body.classList.remove('dark-mode');
+}
+
+// Función para cambiar a modo oscuro
+function setDarkMode() {
+    document.body.classList.add('dark-mode');
+    document.body.classList.remove('light-mode');
+}
+
+// Añadir event listeners a los botones
+document.getElementById('light-mode').addEventListener('click', setLightMode);
+document.getElementById('dark-mode').addEventListener('click', setDarkMode);
+</script>
+
+
                   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                      <nav class="navigation navbar navbar-expand-md navbar-dark ">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,11 +180,12 @@
                      <div class="padding_lert">
                         {{-- <h1 style="color: white">Bienvenido a nuestra Papeleria </h1>
                         <p>Aquí encontrarás todo lo que necesitas para tu colegio, empleo o negocio</p> --}}
+                           
                      </div>
                   </div>
                </div>
             </div>
-         </div>
+         </div>++''
       </section>
 
 
@@ -128,12 +193,16 @@
       <div class="choose">
          <div class="container">
             <div class="titlepage">
+            
+
                <h2><span class="text_norlam">Elige uno de nuestros Productos disponibles</span>
             </div>
              <div class="row">
                  @foreach ($productos as $producto)
                  <div class="col-md-4">
-                     <div class="bg-white rounded-lg shadow-lg p-4 mb-4">
+                     <div class="bg-black rounded-lg shadow-lg p-4 mb-4">
+
+
                          <img src="{{ asset('storage/productos/'. $producto->photourl) }}" alt="Imagen de la habitación" class="w-full h-40 object-cover mb-4">
                          <p class="text-lg font-bold">ID: {{ $producto->id }}</p>
                          <p class="text-sm">Nombre: {{ $producto->name }}</p>
@@ -160,6 +229,7 @@
                <div class="col-md-6">
                   <div class="choose_box">
                      <div class="titlepage">
+
                         <h2><span class="text_norlam">Elige lo mejor</span> <br>Todo para el Éxito Escolar</h2>
                      </div>
                      <p>Descubre Nuestra Amplia Gama de Artículos Escolares de Calidad"</p>
