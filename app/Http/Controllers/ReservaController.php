@@ -21,7 +21,7 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        return view('reservas.create');
+        return view ('reservas.create');
     }
 
     /**
@@ -87,9 +87,9 @@ class ReservaController extends Controller
 
         // Guardar los datos en la base de datos
         $pay= new Pay();
-        $pay->title = $nombre;
+        ///$pay->title = $nombre;
         $pay-> description = $carnet;
-        $pay->total = $nombre;
+        $pay->total = 100;
         $pay->iduser = auth()->user()->id; // Obtener el ID del usuario logueado
        // $reserva->estado = "Procesando";
         // Guardar la reserva

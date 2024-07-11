@@ -29,19 +29,15 @@
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-
-
+      <!-- Button light dark -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
       
       
-
-
-  
     
    </head>
    <!-- body -->
    <body class="main-layout">
 
- 
 
       <!-- header -->
       <header>
@@ -54,12 +50,8 @@
     <!-- Contenido que cambiará entre modos claro y oscuro -->
         </div>
         
-
          @endif
          <!-- header inner -->
-
-
-
 
 
          <div class="header">
@@ -82,6 +74,20 @@
     <button id="dark-mode">Modo Oscuro</button>
 </div>
 
+<!-- Añadir esto en tu archivo blade donde quieres los botones -->
+
+
+<button id="fontArial">Arial</button>
+<button id="fontTimes">Times New Roman</button>
+<button id="fontVerdana">Verdana</button>
+ 
+<!-- Botones para ajustar el tamaño de la letra -->
+<div class="size-switch">
+    <button id="increase-font">+</button>
+    <button id="decrease-font">-</button>
+</div>
+
+
 <style>
 /* Estilos para modo claro */
 .light-mode {
@@ -101,7 +107,18 @@
     background-color: #333; /* Fondo oscuro */
     color: white; /* Texto claro */
 }
+/* tipo de letra */
+.font-arial {
+    font-family: Arial, sans-serif;
+}
 
+.font-times {
+    font-family: 'Times New Roman', serif;
+}
+
+.font-verdana {
+    font-family: Verdana, sans-serif;
+}
 </style>
 
 <script>
@@ -120,8 +137,46 @@ function setDarkMode() {
 // Añadir event listeners a los botones
 document.getElementById('light-mode').addEventListener('click', setLightMode);
 document.getElementById('dark-mode').addEventListener('click', setDarkMode);
-</script>
 
+
+///manejo de funtes de los botones
+document.addEventListener('DOMContentLoaded', () => {
+    const textBg = document.querySelector('.text_norlam');
+
+    document.getElementById('fontArial').addEventListener('click', () => {
+        textBg.className = 'text_norlam font-arial';
+    });
+
+    document.getElementById('fontTimes').addEventListener('click', () => {
+        textBg.className = 'text_norlam font-times';
+    });
+
+    document.getElementById('fontVerdana').addEventListener('click', () => {
+        textBg.className = 'text_norlam font-verdana';
+    });
+});
+
+
+///manejo del tamaño 
+document.addEventListener('DOMContentLoaded', () => {
+    const increaseFontBtn = document.getElementById('increase-font');
+    const decreaseFontBtn = document.getElementById('decrease-font');
+    let fontSize = 16; // Tamaño inicial de la fuente en píxeles
+
+    increaseFontBtn.addEventListener('click', () => {
+        fontSize++;
+        document.body.style.fontSize = fontSize + 'px';
+    });
+
+    decreaseFontBtn.addEventListener('click', () => {
+        if (fontSize > 1) { // Evita un tamaño de fuente negativo o cero
+            fontSize--;
+            document.body.style.fontSize = fontSize + 'px';
+        }
+    });
+});
+
+</script>
 
                   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                      <nav class="navigation navbar navbar-expand-md navbar-dark ">
@@ -178,25 +233,22 @@ document.getElementById('dark-mode').addEventListener('click', setDarkMode);
                <div class="col-md-12">
                   <div class="text-bg">
                      <div class="padding_lert">
-                        {{-- <h1 style="color: white">Bienvenido a nuestra Papeleria </h1>
-                        <p>Aquí encontrarás todo lo que necesitas para tu colegio, empleo o negocio</p> --}}
+                       <!--  <h1 style="color: white">Bienvenido a nuestra Papeleria </h1>
+                        <p>Aquí encontrarás todo lo que necesitas para tu colegio, empleo o negocio</p> -->
                            
                      </div>
                   </div>
                </div>
             </div>
-         </div>++''
+         </div>
       </section>
-
 
 
       <div class="choose">
          <div class="container">
             <div class="titlepage">
-            
 
                <h2><span class="text_norlam">Elige uno de nuestros Productos disponibles</span>
-            </div>
              <div class="row">
                  @foreach ($productos as $producto)
                  <div class="col-md-4">
@@ -230,9 +282,9 @@ document.getElementById('dark-mode').addEventListener('click', setDarkMode);
                   <div class="choose_box">
                      <div class="titlepage">
 
-                        <h2><span class="text_norlam">Elige lo mejor</span> <br>Todo para el Éxito Escolar</h2>
+             <h2><span class="text_norlam">Elige lo mejor <br>Todo para el Éxito Escolar </span>
                      </div>
-                     <p>Descubre Nuestra Amplia Gama de Artículos Escolares de Calidad"</p>
+                     <p>Descubre Nuestra Amplia Gama de Artículos Escolares de Calidad</p>
                      <a class="read_more" href="#">Leer más</a>
                   </div>
                </div>
@@ -273,7 +325,7 @@ document.getElementById('dark-mode').addEventListener('click', setDarkMode);
                <div class="col-md-6">
                   <div class="our_box">
                      <div class="titlepage">
-                        <h2><span class="text_norlam">Preparados para el  </span> <br>Éxito</h2>
+                        <h2><span class="text_norlam">Preparados para el  </span> <br>Éxito</br></h2>
                      </div>
                      <p> Destino Escolar Comienza Aquí con Nuestros Artículos de Papelería</p>
                      <a class="read_more" href="#">Leer más</a>
@@ -290,7 +342,9 @@ document.getElementById('dark-mode').addEventListener('click', setDarkMode);
                <div class="col-md-6">
                   <div class="about_text">
                      <div class="titlepage">
-                        <h2>Sobre nuestra Papeleria</h2>
+           
+
+                        <h2><span class="text_norlam">Sobre nuestra Papeleria</span>  </h2>
                         <p>Buscamos ser la mejor papeleria en Bolivia dando la mejor atención al cliente y los mejores precios</p>
                      </div>
                   </div>
@@ -312,12 +366,14 @@ document.getElementById('dark-mode').addEventListener('click', setDarkMode);
                <div class="row">
                   <div class="col-md-6">
                      <div class="titlepage">
-                        <h2>Contactanos</h2>
-                     </div>
+
+                        <h2> Contactanos</h2>
+                     
                      <div class="cont">
 
                         <p>Estamos disponibles las 24 horas del día para responder a tus preguntas y atender tus necesidades. No dudes en comunicarte con nosotros.</p>
                      </div>
+                  </div>
                   </div>
 
                </div>
