@@ -110,7 +110,7 @@ class ProductController extends Controller
 
     public function generarqr(Request $request)
     {
-        $lcUrl = "https://serviciostigomoney.pagofacil.com.bo/api/servicio/generarqrv2";
+      $lcUrl = "https://serviciostigomoney.pagofacil.com.bo/api/servicio/generarqrv2";
 
         // Obtén los datos del producto_id
         $producto = Product::find($request->producto_id);
