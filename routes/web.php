@@ -79,9 +79,6 @@ Route::get('/categorias/{categoria}/edit', [CategoryController::class, 'edit'])-
 Route::get('/categorias/lista', [CategoryController::class, 'lista'])->name('categorias.lista');
 
 
-
-
-
 //Reportes de usuario
 Route::get('/exportar-usuarios-pdf', [UserController::class, 'downloadPDF'])->name('exportar.usuarios.pdf');
 Route::get('usuarios/export/', [UserController::class, 'downloadExcel'])->name('exportar.usuarios.xlsx');

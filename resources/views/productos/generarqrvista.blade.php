@@ -72,5 +72,49 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Otros scripts JavaScript -->
+
+
+    <div class="our">
+      <div class="container">
+         <div class="row d_flex">
+           
+            <div class="col-md-6">
+               <div class="our_box">
+                  <div class="titlepage">
+                  <h2><span class="text_norlam">Elige lo mejor <br>Todo para el Éxito Escolar </span>
+                  </div>
+                  <p>Descubre Nuestra Amplia Gama de Artículos Escolares de Calidad</p>
+                  <a class="read_more" href="#">Leer más</a>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="img_box">
+               <figure><img src="images/img1.jpg" alt="#" /></figure>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+
+                  <div class="img_box">
+                     <figure><img src="images/img2.jpg" alt="#" /></figure>
+                  </div>
+               </div>
+               <div class="row">
+
+               <div class="col-md-6">
+
+                  <div class="img_box">
+                     <figure><img src="images/img3.jpg" alt="#" /></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
 </body>
 </html>
