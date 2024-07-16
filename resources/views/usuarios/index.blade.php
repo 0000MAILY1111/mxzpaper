@@ -83,6 +83,8 @@
 
                </div>
 
+               
+
                <!-- Botones para ajustar el tamaño de la letra -->
                <div class="size-switch">
                   <button id="increase-font">+</button>
@@ -121,7 +123,7 @@
                      font-family: Verdana, sans-serif;
                   }
 
-                  
+
 
                   /* Estilo por defecto */
                   .text-sm {
@@ -149,6 +151,16 @@
                         color: blue;
                         /* Blanco para modo oscuro */
                      }
+                  }
+
+                  .view_counter {
+                     display: flex;
+                     align-items: center;
+                     font-size: 16px;
+                  }
+
+                  .view_counter i {
+                     margin-right: 5px;
                   }
                </style>
 
@@ -308,15 +320,15 @@
 
    <!-- end banner -->
    <!-- choose  section -->
- 
-      <div class="choise">
+
+   <div class="choise">
       <div class="container">
          <div class="row d_flex">
-           
+
             <div class="col-md-6">
                <div class="our_box">
                   <div class="titlepage">
-                  <h2><span class="text_norlam">Elige lo mejor <br>Todo para el Éxito Escolar </span>
+                     <h2><span class="text_norlam">Elige lo mejor <br>Todo para el Éxito Escolar </span>
                   </div>
                   <p>Descubre Nuestra Amplia Gama de Artículos Escolares de Calidad</p>
                   <a class="read_more" href="#">Leer más</a>
@@ -324,10 +336,10 @@
             </div>
             <div class="col-md-6">
                <div class="img_box">
-               <figure><img src="images/img1.jpg" alt="#" /></figure>
+                  <figure><img src="images/img1.jpg" alt="#" /></figure>
                </div>
             </div>
-           
+
          </div>
       </div>
    </div>

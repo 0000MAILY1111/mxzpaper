@@ -30,7 +30,6 @@ Route::get('/', function () {
     return view('usuarios.index');
 });
 
-use App\Http\Controllers\TuControlador;
 
 Route::middleware([
     'auth:sanctum',
@@ -99,4 +98,5 @@ Route::get('categorias/export/', [CategoryController::class, 'downloadExcel'])->
 
 //De esta forma nunca funcinó bien el tiempo real
 // Route::get('/exportar-usuarios-pdf/{{$searchTerm }}', [MostrarUsuarios::class,'exportUsersPDF'])->name('exportar.usuarios.pdf');
+
 
